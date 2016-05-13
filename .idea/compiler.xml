@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="dmz-inward-basic" />
+        <module name="dmz-inward-biz" />
+        <module name="dmz-inward-expose" />
+        <module name="dmz-inward-facade" />
+        <module name="dmz-inward-service" />
+        <module name="dmz-inward-test" />
+        <module name="dmz-inward-utils" />
+        <module name="dmz-inward-web" />
+        <module name="react-app" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="DataBaseService" target="1.5" />
+      <module name="dmz-inward" target="1.5" />
+      <module name="dmz-inward-basic" target="1.5" />
+      <module name="dmz-inward-biz" target="1.5" />
+      <module name="dmz-inward-expose" target="1.5" />
+      <module name="dmz-inward-facade" target="1.5" />
+      <module name="dmz-inward-service" target="1.5" />
+      <module name="dmz-inward-test" target="1.5" />
+      <module name="dmz-inward-utils" target="1.8" />
+      <module name="dmz-inward-web" target="1.5" />
+      <module name="DubboConsumer" target="1.5" />
+      <module name="DubboFacade" target="1.5" />
+      <module name="DubboProvider" target="1.8" />
+      <module name="react-app" target="1.5" />
+      <module name="RocketMQConsumer" target="1.5" />
+      <module name="RocketMQProvider" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

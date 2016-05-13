@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward.iml" filepath="$PROJECT_DIR$/dmz-inward.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-basic/dmz-inward-basic.iml" filepath="$PROJECT_DIR$/dmz-inward-basic/dmz-inward-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-biz/dmz-inward-biz.iml" filepath="$PROJECT_DIR$/dmz-inward-biz/dmz-inward-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-expose/dmz-inward-expose.iml" filepath="$PROJECT_DIR$/dmz-inward-expose/dmz-inward-expose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-facade/dmz-inward-facade.iml" filepath="$PROJECT_DIR$/dmz-inward-facade/dmz-inward-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-service/dmz-inward-service.iml" filepath="$PROJECT_DIR$/dmz-inward-service/dmz-inward-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-test/dmz-inward-test.iml" filepath="$PROJECT_DIR$/dmz-inward-test/dmz-inward-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-utils/dmz-inward-utils.iml" filepath="$PROJECT_DIR$/dmz-inward-utils/dmz-inward-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dmz-inward-web/dmz-inward-web.iml" filepath="$PROJECT_DIR$/dmz-inward-web/dmz-inward-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-app/react-app.iml" filepath="$PROJECT_DIR$/../react-app/react-app.iml" />
+    </modules>
+  </component>
+</project>
