@@ -5,7 +5,9 @@ package com.dmz;
  */
 public class Money {
     public static void main(String[] args){
-
+        /**
+         * caculate money
+         */
         double ylv=0.00583f;
         int bj = 1500000;
         int hkys = 50*12;
