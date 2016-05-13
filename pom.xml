@@ -377,12 +377,12 @@
         <repository>
             <id>releases</id>
             <name>Nexus Releases Repository</name>
-            <url>http://121.43.117.62:8081/nexus/content/repositories/releases/</url>
+            <url>http://xxx/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Nexus Snapshots Repository</name>
-            <url>http://121.43.117.62:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://xxx/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
