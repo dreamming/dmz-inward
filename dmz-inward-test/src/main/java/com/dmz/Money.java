@@ -8,9 +8,10 @@ public class Money {
         /**
          * caculate money
          */
-        double ylv=0.00583f;
-        int bj = 1500000;
-        int hkys = 50*12;
+        double ylv=0.0049f;
+        int bj = 1000000;
+        int hkys = 30*12;
+
         double a;
         double b;
         a = bj*ylv*Math.pow((1+ylv),hkys);
