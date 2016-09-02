@@ -22,8 +22,8 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.23.134/dmz_inward" userId="root"
-                        password="0307"/>
+                        connectionURL="jdbc:mysql://172.16.57.31:43306/eif_fds?" userId="qa_hdjf"
+                        password="qa123456"/>
 
         <!--When the property is true,
         the Java type resolver will always use java.math.BigDecimal if the database column is of
@@ -43,7 +43,7 @@
                              targetProject="src/main/java" type="XMLMAPPER"/>
 
 
-        <table tableName="dmz_user" domainObjectName="User">
+        <table tableName="t_fds_dividend_record" domainObjectName="FdsDividendRecord">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
 

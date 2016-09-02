@@ -30,6 +30,11 @@
             <artifactId>dmz-inward-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.dmz.inward</groupId>
+            <artifactId>dmz-inward-biz</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -60,15 +65,20 @@
             <artifactId>commons-fileupload</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.dmz.inward</groupId>
-            <artifactId>dmz-inward-biz</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -83,7 +93,7 @@
                     </httpConnector>
                     <!--<scanIntervalSeconds>3</scanIntervalSeconds>-->
                     <!--<webApp>-->
-                    <!--<contextPath>/dmz</contextPath>-->
+                        <!--<contextPath>/dmz</contextPath>-->
                     <!--</webApp>-->
                     <!--<stopPort>9966</stopPort>-->
                     <!--<scanTargetPatterns>-->

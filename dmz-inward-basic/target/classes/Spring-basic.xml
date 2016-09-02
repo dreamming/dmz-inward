@@ -15,6 +15,8 @@
 	http://www.springframework.org/schema/aop/spring-aop.xsd"
        default-lazy-init="true">
 
+    <context:component-scan base-package="com.dmz.basic" />
+
     <!--数据连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="${mysql.driver}"/>

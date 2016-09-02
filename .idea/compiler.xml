@@ -40,7 +40,7 @@
       <module name="dmz-inward-biz" target="1.5" />
       <module name="dmz-inward-expose" target="1.5" />
       <module name="dmz-inward-facade" target="1.5" />
-      <module name="dmz-inward-service" target="1.5" />
+      <module name="dmz-inward-service" target="1.8" />
       <module name="dmz-inward-test" target="1.7" />
       <module name="dmz-inward-utils" target="1.8" />
       <module name="dmz-inward-web" target="1.5" />

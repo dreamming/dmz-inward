@@ -159,4 +159,6 @@
     <!--<mvc:annotation-driven />-->
     <mvc:resources mapping="/js/**" location="/WEB-INF/js/" cache-period="31556926"/>
     <mvc:resources mapping="/views/**" location="/WEB-INF/views/" cache-period="31556926"/>
+
+
 </beans>

@@ -9,5 +9,5 @@ public interface UserDmz {
      *
      * @return
      */
-    public String showUserName();
+    String showUserName();
 }

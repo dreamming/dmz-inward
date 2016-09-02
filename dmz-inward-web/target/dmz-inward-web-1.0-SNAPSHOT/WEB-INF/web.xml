@@ -3,6 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!-- 默认首页定义 -->
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>index.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
+
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:Spring-basic.xml,classpath:Spring-service.xml,classpath:Spring-utils.xml</param-value>
@@ -33,6 +39,7 @@
         <servlet-name>SpringDispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 
     <!--start Cors Filter-->
     <filter>

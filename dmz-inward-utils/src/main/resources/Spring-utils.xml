@@ -11,6 +11,7 @@
             <list>
                 <value>classpath*:data.properties</value>
                 <value>classpath*:mq.properties</value>
+                <value>classpath*:security.properties</value>
             </list>
         </property>
     </bean>

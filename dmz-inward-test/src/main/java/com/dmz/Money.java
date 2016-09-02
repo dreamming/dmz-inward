@@ -8,9 +8,9 @@ public class Money {
         /**
          * caculate money
          */
-        double ylv=0.0049f;
-        int bj = 1000000;
-        int hkys = 30*12;
+        double ylv=0.09f/12;
+        int bj = 60000;
+        int hkys = 1*12;
 
         double a;
         double b;

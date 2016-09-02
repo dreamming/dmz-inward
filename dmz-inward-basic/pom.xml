@@ -55,37 +55,56 @@
         </dependency>
         <!--end add mysql dependencies-->
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <configurationFile>src/main/resources/generateConfig.xml</configurationFile>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>Generate MyBatis Artifacts</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <!--<dependencies>-->
-                    <!--<dependency>-->
-                        <!--<groupId>org.mybatis.generator</groupId>-->
-                        <!--<artifactId>mybatis-generator-core</artifactId>-->
+    <profiles>
+        <profile>
+            <id>mybatis-generator</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.mybatis.generator</groupId>
+                        <artifactId>mybatis-generator-maven-plugin</artifactId>
                         <!--<version>1.3.2</version>-->
-                    <!--</dependency>-->
-                <!--</dependencies>-->
-            </plugin>
-        </plugins>
-    </build>
+                        <!--<configuration>-->
+                            <!--<configurationFile>src/main/resources/generateConfig.xml</configurationFile>-->
+                            <!--<verbose>true</verbose>-->
+                            <!--<overwrite>true</overwrite>-->
+                        <!--</configuration>-->
+                        <!--<executions>-->
+                            <!--<execution>-->
+                                <!--<id>Generate MyBatis Artifacts</id>-->
+                                <!--<goals>-->
+                                    <!--<goal>generate</goal>-->
+                                <!--</goals>-->
+                            <!--</execution>-->
+                        <!--</executions>-->
+                        <!--<dependencies>-->
+                            <!--<dependency>-->
+                                <!--<groupId>org.mybatis.generator</groupId>-->
+                                <!--<artifactId>mybatis-generator-core</artifactId>-->
+                            <!--</dependency>-->
+                        <!--</dependencies>-->
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 
 </project>

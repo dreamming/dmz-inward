@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="dmz-inward-web:war">
     <output-path>$PROJECT_DIR$/dmz-inward-web/target</output-path>
-    <root id="archive" name="dmz-inward-web-1.0-SNAPSHOT.war">
+    <root id="archive" name="dmz-inward-web.war">
       <element id="artifact" artifact-name="dmz-inward-web:war exploded" />
     </root>
   </artifact>
