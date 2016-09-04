@@ -96,7 +96,7 @@
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
                         <!--访问地址：http://localhost:8080/index.jsp-->
-                        <!--如果不带index.jsp会直接报404，这个一直没找到原因-->
+                        <!--如果不带index.jsp会直接报404-->
                         <contextPath>/dmz</contextPath>
                     </webApp>
                 </configuration>
