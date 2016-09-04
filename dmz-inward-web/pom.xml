@@ -88,26 +88,17 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.7.v20160115</version>
                 <configuration>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
                     <httpConnector>
                         <port>9988</port>
                     </httpConnector>
-                    <!--<scanIntervalSeconds>3</scanIntervalSeconds>-->
-                    <!--<webApp>-->
-                        <!--<contextPath>/dmz</contextPath>-->
-                    <!--</webApp>-->
-                    <!--<stopPort>9966</stopPort>-->
-                    <!--<scanTargetPatterns>-->
-                    <!--<scanTargetPattern>-->
-                    <!--<directory>src/main/web/WEB-INF</directory>-->
-                    <!--&lt;!&ndash;<excludes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<exclude>**/*.jsp</exclude>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</excludes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include>**/*.properties</include>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<include>**/*.xml</include>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                    <!--</scanTargetPattern>-->
-                    <!--</scanTargetPatterns>-->
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webApp>
+                        <!--访问地址：http://localhost:8080/index.jsp-->
+                        <!--如果不带index.jsp会直接报404，这个一直没找到原因-->
+                        <contextPath>/dmz</contextPath>
+                    </webApp>
                 </configuration>
             </plugin>
         </plugins>

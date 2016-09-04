@@ -38,8 +38,8 @@ public class LoginFront {
     @Resource
     private ILoginService loginService;
 
-    @Resource
-    private IUserService userService;
+//    @Resource
+//    private IUserService userService;
 
     @RequestMapping(value = "/captcha")
     @ResponseBody

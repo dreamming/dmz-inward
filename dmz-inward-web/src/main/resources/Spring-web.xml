@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd" >
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--扫描模块对应的包 -->
     <context:component-scan base-package="com.dmz.web"
@@ -22,7 +22,7 @@
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
         <!--<property name="interceptors">-->
         <!--<list>-->
-            <!--<ref bean="frontInterceptor"/>-->
+        <!--<ref bean="frontInterceptor"/>-->
         <!--&lt;!&ndash;<ref bean="logNDCInteceptor"/>   &lt;!&ndash; 日志拦截器 &ndash;&gt;&ndash;&gt;-->
         <!--&lt;!&ndash;<ref bean="myRequestHelperInteceptor"/>   &lt;!&ndash; RequestHelper拦截器&ndash;&gt;&ndash;&gt;-->
         <!--&lt;!&ndash;<ref bean="myPermissionsInteceptor"/>  &lt;!&ndash; 权限拦截器&ndash;&gt;&ndash;&gt;-->
@@ -45,7 +45,8 @@
             </list>
         </property>
     </bean>
-    <bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+    <bean id="mappingJackson2HttpMessageConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>
                 <value>application/json;charset=UTF-8</value>
@@ -55,16 +56,16 @@
     <bean id="mappingFastjsonHttpMessageConverter"
           class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
         <!--<property name="supportedMediaTypes">-->
-            <!--<list>-->
-                <!--<value>application/x-www-form-urlencoded; charset=UTF-8</value>-->
-            <!--</list>-->
+        <!--<list>-->
+        <!--<value>application/x-www-form-urlencoded; charset=UTF-8</value>-->
+        <!--</list>-->
         <!--</property>-->
     </bean>
     <bean id="byteArray_hmc" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/><!-- 处理.. -->
     <bean id="string_hmc" class="org.springframework.http.converter.StringHttpMessageConverter"/><!-- 处理.. -->
     <bean id="resource_hmc" class="org.springframework.http.converter.ResourceHttpMessageConverter"/><!-- 处理.. -->
     <bean id="source_hmc" class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/><!-- 处理.. -->
-    <bean id="form_hmc" class="org.springframework.http.converter.FormHttpMessageConverter" /> <!-- 处理-->
+    <bean id="form_hmc" class="org.springframework.http.converter.FormHttpMessageConverter"/> <!-- 处理-->
     <bean id="xmlAwareForm_hmc"
           class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter"/><!-- 处理.. -->
     <bean id="jaxb2RootElement_hmc"
@@ -134,12 +135,18 @@
     </bean>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="1000000"/>
+        <!-- 默认编码 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 文件大小最大值 上传文件大小限制为10M，10*1024*1024 -->
+        <property name="maxUploadSize" value="10485760"/>
+        <!-- 内存中的最大值 -->
+        <property name="maxInMemorySize" value="4096"/>
     </bean>
 
     <!--config servlet3.0 config-->
     <!--<bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />-->
     <!--end config servlet3.0 config-->
+
     <bean id="webLoggerAdvisor" class="com.dmz.web.advisor.LoggerAdvisor"/>
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">

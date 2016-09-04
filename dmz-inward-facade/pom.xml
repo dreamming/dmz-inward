@@ -65,13 +65,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.4</version>
-                        <configuration>
-                            <aggregate>true</aggregate>
-                            <charset>UTF-8</charset>
-                            <encoding>UTF-8</encoding>
-                            <docencoding>UTF-8</docencoding>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -84,7 +77,6 @@
                     <plugin>
                         <groupId>org.jvnet.jaxb2.maven2</groupId>
                         <artifactId>maven-jaxb2-plugin</artifactId>
-                        <version>0.12.3</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -107,47 +99,5 @@
             </build>
         </profile>
     </profiles>
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.apache.maven.plugins</groupId>-->
-    <!--<artifactId>maven-javadoc-plugin</artifactId>-->
-    <!--<version>2.10.4</version>-->
-    <!--<configuration>-->
-    <!--<aggregate>true</aggregate>-->
-    <!--<charset>UTF-8</charset>-->
-    <!--<encoding>UTF-8</encoding>-->
-    <!--<docencoding>UTF-8</docencoding>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</build>-->
-    <!--<build>-->
-    <!--<plugins>-->
-    <!--&lt;!&ndash;add jaxb2&ndash;&gt;-->
-    <!--<plugin>-->
-    <!--<groupId>org.jvnet.jaxb2.maven2</groupId>-->
-    <!--<artifactId>maven-jaxb2-plugin</artifactId>-->
-    <!--<version>0.12.3</version>-->
-    <!--<executions>-->
-    <!--<execution>-->
-    <!--<goals>-->
-    <!--<goal>generate</goal>-->
-    <!--</goals>-->
-    <!--</execution>-->
-    <!--</executions>-->
-    <!--<configuration>-->
-    <!--<schemaLanguage>WSDL</schemaLanguage>-->
-    <!--<generatePackage>englishchinese.wsdl</generatePackage>-->
-    <!--<schemas>-->
-    <!--<schema>-->
-    <!--<url>wsdl/EnglishChinese.asmx</url>-->
-    <!--</schema>-->
-    <!--</schemas>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--&lt;!&ndash;end jaxb2&ndash;&gt;-->
-    <!--</plugins>-->
-    <!--</build>-->
 
 </project>

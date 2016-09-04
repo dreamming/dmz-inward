@@ -25,17 +25,30 @@
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>
-                <!--<value>*Service</value>-->
+                <value>*Service</value>
+            </list>
+        </property>
+        <!--拦截器-->
+        <property name="interceptorNames">
+            <list>
+                <idref bean="loggerAdvisor"/>
+                <value>transactionInterceptor</value>
+                <!-- idref bean会进行检测是否存在,作用同<value>,value不做检测 || idref local属性4.0以后被移出-->
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
                 <value>*Dao</value>
             </list>
         </property>
         <!--拦截器-->
         <property name="interceptorNames">
             <list>
-                <!--<value>loggerAdvisor</value>-->
-                <idref bean="loggerExceptionAdvice"/>
-                <value>transactionInterceptor</value>
-                <!-- idref bean会进行检测是否存在,作用同<value>,value不做检测 || idref local属性4.0以后被移出-->
+                <!--<idref bean="loggerExceptionAdvice"/>-->
+                <value>druidStatInterceptor</value>
             </list>
         </property>
     </bean>
