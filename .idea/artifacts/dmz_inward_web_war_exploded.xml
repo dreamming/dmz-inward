@@ -42,6 +42,9 @@
           <element id="archive" name="dmz-inward-biz-1.0-SNAPSHOT.jar">
             <element id="module-output" name="dmz-inward-biz" />
           </element>
+          <element id="library" level="project" name="Maven: ch.qos.logback.contrib:logback-json-classic:0.1.2" />
+          <element id="library" level="project" name="Maven: ch.qos.logback.contrib:logback-json-core:0.1.2" />
+          <element id="library" level="project" name="Maven: ch.qos.logback.contrib:logback-jackson:0.1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.1.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.8.RELEASE" />

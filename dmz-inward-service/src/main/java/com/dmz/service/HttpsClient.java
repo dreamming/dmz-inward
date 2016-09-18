@@ -29,6 +29,7 @@ import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.UnknownHostException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -205,7 +206,7 @@ public abstract class HttpsClient extends SSLConnection {
         URIBuilder builder = new URIBuilder().setScheme("https")
                 .setHost(host)
                 .setPath(path);
-
+        builder.setCharset(Charset.forName("UTF-8"));//设置URLEncode 为UTF-8
         for (String key : params.keySet()) {
             builder.setParameter(key, params.get(key).toString());
         }

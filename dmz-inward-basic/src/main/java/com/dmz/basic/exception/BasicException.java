@@ -6,7 +6,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Created by dmz on 2016/8/19.
  */
-public abstract class BasicException extends Exception {
+public abstract class BasicException extends RuntimeException {
 
     private String message;
 
@@ -43,5 +43,29 @@ public abstract class BasicException extends Exception {
             var2.printStackTrace();
             return super.toString();
         }
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public Throwable getEx() {
+        return ex;
+    }
+
+    public void setEx(Throwable ex) {
+        this.ex = ex;
+    }
+
+    public String getJsonContext() {
+        return jsonContext;
+    }
+
+    public void setJsonContext(String jsonContext) {
+        this.jsonContext = jsonContext;
     }
 }

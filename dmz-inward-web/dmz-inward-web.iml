@@ -75,6 +75,9 @@
     <orderEntry type="library" name="Maven: stax:stax-api:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.virtuald:curvesapi:1.03" level="project" />
     <orderEntry type="module" module-name="dmz-inward-biz" />
+    <orderEntry type="library" name="Maven: ch.qos.logback.contrib:logback-json-classic:0.1.2" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback.contrib:logback-json-core:0.1.2" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback.contrib:logback-jackson:0.1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.1.8.RELEASE" level="project" />

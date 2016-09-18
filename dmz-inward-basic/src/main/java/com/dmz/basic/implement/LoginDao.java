@@ -19,7 +19,7 @@ public class LoginDao implements ILoginDao {
     @Autowired
     private LoginMapper loginMapper;
 
-    public void insertLogin(Login login) throws DBException.NoReaction, DBException.DBServerException {
+    public void insertLogin(Login login){
         try {
             int result = loginMapper.insert(login);
             if (result != 1) {
@@ -33,7 +33,7 @@ public class LoginDao implements ILoginDao {
         }
     }
 
-    public Login selectByPrimaryKey(Long id) throws DBException.EmptyData, DBException.MultipleData, DBException.DBServerException {
+    public Login selectByPrimaryKey(Long id) {
         try {
             List<Login> login = loginMapper.selectByPrimaryKey(id);
             if (login == null || login.isEmpty()) {
@@ -53,7 +53,7 @@ public class LoginDao implements ILoginDao {
         }
     }
 
-    public Login selectLoginByLogin(Login loginParam) throws DBException.EmptyData, DBException.MultipleData, DBException.DBServerException {
+    public Login selectLoginByLogin(Login loginParam){
 
         try {
             List<Login> login = loginMapper.selectLoginByLogin(loginParam);

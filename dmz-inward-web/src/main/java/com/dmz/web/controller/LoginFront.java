@@ -3,6 +3,7 @@ package com.dmz.web.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.dmz.basic.Response;
+import com.dmz.basic.exception.DBException;
 import com.dmz.basic.model.Login;
 import com.dmz.basic.model.User;
 import com.dmz.service.constant.basic.LoginDetail;
@@ -69,7 +70,16 @@ public class LoginFront {
 
     @RequestMapping(value = "/details/{id}", method = RequestMethod.POST)
     public String LoginDetails(@PathVariable("id") long userId, ModelMap model) {
-        Login loginDetail = loginService.getLoginInfoById(userId);
+        Login loginDetail = null;
+        try {
+            loginDetail = loginService.getLoginInfoById(userId);
+        } catch (DBException.DBServerException e) {
+            e.printStackTrace();
+        } catch (DBException.EmptyData emptyData) {
+            emptyData.printStackTrace();
+        } catch (DBException.MultipleData multipleData) {
+            multipleData.printStackTrace();
+        }
         model.addAttribute("login", loginDetail);
         return "loginDetail";
     }

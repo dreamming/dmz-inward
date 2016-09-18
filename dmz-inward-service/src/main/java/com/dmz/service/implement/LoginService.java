@@ -5,7 +5,6 @@ import com.dmz.basic.idao.IUserDao;
 import com.dmz.basic.model.Login;
 import com.dmz.basic.model.User;
 import com.dmz.basic.exception.DBException;
-import com.dmz.service.advisor.LoggerAdvisor;
 import com.dmz.service.iservice.ILoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,14 +19,13 @@ import org.springframework.util.StringUtils;
 @Service
 public class LoginService implements ILoginService {
 
+    private static Logger LOG = LoggerFactory.getLogger(LoginService.class);
+
     @Autowired
     private ILoginDao loginDao;
 
     @Autowired
     private IUserDao userDao;
-
-    private static Logger LOG = LoggerFactory.getLogger(LoginService.class);
-
 
     @Transactional
     public void addLoginInfo(Login login) {
@@ -41,16 +39,7 @@ public class LoginService implements ILoginService {
     }
 
     public Login getLoginInfoById(Long id) {
-        Login login = null;
-        try {
-            login = loginDao.selectByPrimaryKey(id);
-        } catch (DBException.EmptyData emptyData) {
-            emptyData.printStackTrace();
-        } catch (DBException.MultipleData multipleData) {
-            multipleData.printStackTrace();
-        } catch (DBException.DBServerException e) {
-            e.printStackTrace();
-        }
+        Login login = loginDao.selectByPrimaryKey(id);
         return login;
     }
 
@@ -90,7 +79,7 @@ public class LoginService implements ILoginService {
         return null;
     }
 
-    public Boolean checkUserLogin(Login loginParams)  {
+    public Boolean checkUserLogin(Login loginParams) {
 
         if (loginParams != null && !StringUtils.isEmpty(loginParams.getLoginName()) &&
                 !StringUtils.isEmpty(loginParams.getPasswd())) {
