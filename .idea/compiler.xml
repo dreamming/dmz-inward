@@ -34,8 +34,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="DataBaseService" target="1.5" />
-      <module name="dmz-inward" target="1.5" />
+      <module name="dmz-inward" target="1.8" />
       <module name="dmz-inward-basic" target="1.8" />
       <module name="dmz-inward-biz" target="1.8" />
       <module name="dmz-inward-expose" target="1.8" />
@@ -44,12 +43,7 @@
       <module name="dmz-inward-test" target="1.8" />
       <module name="dmz-inward-utils" target="1.8" />
       <module name="dmz-inward-web" target="1.8" />
-      <module name="DubboConsumer" target="1.5" />
-      <module name="DubboFacade" target="1.5" />
-      <module name="DubboProvider" target="1.8" />
       <module name="react-app" target="1.5" />
-      <module name="RocketMQConsumer" target="1.5" />
-      <module name="RocketMQProvider" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

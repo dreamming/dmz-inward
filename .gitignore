@@ -1,23 +1,23 @@
-## maven ignore
-*target/
+# maven ignore
+target/
 *.jar
-*.war!dmz.war
+*.war
 *.zip
 *.tar
 *.tar.gz
-#
-## eclipse ignore
+
+# eclipse ignore
 .settings/
 .project
 .classpath
-#
-## idea ignore
+
+# idea ignore
 .idea/
 *.ipr
 *.iml
 *.iws
-#
-## temp ignore
+
+# temp ignore
 *.log
 *.cache
 *.diff
@@ -26,7 +26,7 @@
 *.java~
 *.properties~
 *.xml~
-#
-## system ignore
+
+# system ignore
 .DS_Store
 Thumbs.db

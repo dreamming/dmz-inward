@@ -1,12 +1,10 @@
 package com.dmz.service.implement;
 
 import com.alibaba.fastjson.JSON;
-import com.dmz.basic.exception.DBException;
 import com.dmz.basic.model.Login;
 import com.dmz.basic.model.User;
 import com.dmz.service.constant.basic.LoginConstant;
 import com.dmz.service.iservice.ILoginService;
-import com.dmz.service.iservice.IUserService;
 import com.dmz.service.utils.GenerateUUID;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by dmz on 2016/3/18.
