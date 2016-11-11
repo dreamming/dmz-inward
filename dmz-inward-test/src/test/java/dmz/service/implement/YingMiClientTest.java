@@ -1,4 +1,4 @@
-package com.dmz.service.implement;
+package dmz.service.implement;
 
 import com.alibaba.fastjson.JSON;
 import com.dmz.service.*;
@@ -40,12 +40,14 @@ public class YingMiClientTest {
         System.out.println(JSON.toJSONString(account.getAccountName()));
     }
 
-    @Test
+    @Test(timeout = 5000) //5秒退出
     public void testGetFundInfo() {
         FundInfoRequest request = new FundInfoRequest();
         request.setFundCode("270001");
-        FundInfo fundInfo = accountManage.getFundInfo(request);
-        System.out.println(JSON.toJSONString(fundInfo));
+        while (true) {
+            FundInfo fundInfo = accountManage.getFundInfo(request);
+            System.out.println(JSON.toJSONString(fundInfo));
+        }
     }
 
     @Test

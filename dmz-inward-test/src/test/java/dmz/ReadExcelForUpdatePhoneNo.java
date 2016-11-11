@@ -1,4 +1,4 @@
-package com.dmz;
+package dmz;
 
 import com.dmz.service.utils.ExcelRD;
 import org.apache.poi.hssf.usermodel.HSSFCell;

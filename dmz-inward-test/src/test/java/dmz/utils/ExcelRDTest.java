@@ -1,4 +1,4 @@
-package com.dmz.utils;
+package dmz.utils;
 
 import com.dmz.service.utils.ExcelRD;
 import org.junit.Test;

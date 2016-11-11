@@ -14,6 +14,7 @@
                 <value>classpath*:security.properties</value>
             </list>
         </property>
+        <property name="fileEncoding" value="utf-8"/>
     </bean>
     <!--可以通过符号（${url},${username}）获得properties的值，否则不能通过符号获得-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

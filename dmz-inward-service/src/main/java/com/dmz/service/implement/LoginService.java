@@ -1,5 +1,7 @@
 package com.dmz.service.implement;
 
+import com.alibaba.fastjson.JSON;
+import com.dmz.basic.exception.BusinessException;
 import com.dmz.basic.idao.ILoginDao;
 import com.dmz.basic.idao.IUserDao;
 import com.dmz.basic.model.Login;
@@ -61,22 +63,14 @@ public class LoginService implements ILoginService {
     public User showUserDetailByLoginName(Login loginParam) {
 
         if (loginParam != null && loginParam.getLoginName() != null) {
-            try {
                 Login login = loginDao.selectLoginByLogin(loginParam);
                 User user = new User();
                 user.setUserNo(login.getUserNo());
                 User userDaoss = userDao.selectUserByUser(user);  // 数据库中刚好一个数据,Mapper中的sql存在问题
                 return userDaoss;
-            } catch (DBException.MultipleData multipleData) {
-                multipleData.printStackTrace();
-            } catch (DBException.EmptyData emptyData) {
-                emptyData.printStackTrace();
-            } catch (DBException.DBServerException e) {
-                e.printStackTrace();
-            }
         }
 
-        return null;
+        throw new BusinessException.ParamsException("Bad Params",loginParam.toString());
     }
 
     public Boolean checkUserLogin(Login loginParams) {

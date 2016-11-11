@@ -1,4 +1,4 @@
-package com.dmz;
+package dmz;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Sheet;

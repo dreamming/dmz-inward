@@ -55,17 +55,17 @@ debug：当此属性设置为true时，将打印出logback内部日志信息，�
         <layout class="ch.qos.logback.classic.PatternLayout">
         <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [ %thread ] - [ %-5level ] [ %logger{50} : %line ] - %msg%n</pattern>
         </layout>
-        <!--<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">-->
-            <!--<layout class="com.dmz.service.log.JsonLayoutExt">-->
-                <!--<jsonFormatter-->
-                        <!--class="com.dmz.service.log.JsonFormatterExt">-->
-                <!--</jsonFormatter>-->
-                <!--<timestampFormat>yyyy-MM-dd'T'HH:mm:ss.SSS</timestampFormat>-->
-                <!--<includeContextName>false</includeContextName>-->
-                <!--<includeMessage>false</includeMessage>-->
-                <!--<appendLineSeparator>true</appendLineSeparator>-->
-            <!--</layout>-->
-        <!--</encoder>-->
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="com.dmz.service.log.JsonLayoutExt">
+                <jsonFormatter
+                        class="com.dmz.service.log.JsonFormatterExt">
+                </jsonFormatter>
+                <timestampFormat>yyyy-MM-dd'T'HH:mm:ss.SSS</timestampFormat>
+                <includeContextName>false</includeContextName>
+                <includeMessage>false</includeMessage>
+                <appendLineSeparator>true</appendLineSeparator>
+            </layout>
+        </encoder>
     </appender>
 
     <!--

@@ -23,7 +23,7 @@ public class AccountManageService implements IAccountManageService {
     public  List<PaymentProvider> paymentProviders() {
         Type type = new TypeToken<ArrayList<PaymentProvider>>() {
         }.getType();
-        List<PaymentProvider> paymentProviders = yingmiClient.get("/utils/getPaymentProviders", Collections.emptyMap(),type);
+        List<PaymentProvider> paymentProviders = yingmiClient.get("/utils/getPaymentProviders", new HashMap<>(),type);
         return paymentProviders;
     }
 

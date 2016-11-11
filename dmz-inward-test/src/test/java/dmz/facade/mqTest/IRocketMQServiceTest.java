@@ -1,4 +1,4 @@
-package com.dmz.facade.mqTest;
+package dmz.facade.mqTest;
 
 import com.dmz.service.mq.IRocketMQService;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.dmz;
+package dmz;
 
 /**
  * Created by dmz on 2016/4/28.

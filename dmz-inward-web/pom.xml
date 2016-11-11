@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>dmz-inward-web</artifactId>
-    <packaging>war</packaging>
+    <packaging>war</packaging>  <!--项目发布的资源包-->
     <name>DMZ Web</name>
 
     <dependencies>

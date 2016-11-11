@@ -1,4 +1,4 @@
-package com.dmz.facade.dubboTest;
+package dmz.facade.mqTest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,14 +8,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.io.IOException;
 
 /**
- * Created by dmz on 2016/3/5.
+ * Created by dmz on 2016/3/7.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:Spring-facade-provider.xml"})
-public class DubboProviderTest {
+@ContextConfiguration(locations = {"classpath:Spring-facade-consumer.xml","classpath:Spring-utils.xml"})
+public class DConsumerListernTest {
 
     @Test
-    public void testDubboProvider(){
+    public void testDConsumerListern(){
         try {
             System.in.read();
         } catch (IOException e) {

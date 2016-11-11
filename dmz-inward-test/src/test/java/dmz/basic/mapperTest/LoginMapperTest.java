@@ -1,9 +1,10 @@
-package com.dmz.basic.mapperTest;
+package dmz.basic.mapperTest;
 
 import com.dmz.basic.mapper.LoginMapper;
 import com.dmz.basic.model.Login;
 import com.dmz.service.constant.basic.LoginConstant;
 import com.dmz.service.utils.GenerateUUID;
+import dmz.TestSuites;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ import java.util.Date;
 /**
  * Created by dmz on 2016/3/2.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:Spring-basic.xml","classpath:Spring-utils.xml"})
-public class LoginMapperTest {
+//@RunWith(SpringJUnit4ClassRunner.class)
+//@ContextConfiguration(locations = {"classpath:Spring-basic.xml","classpath:Spring-utils.xml"})
+public class LoginMapperTest extends TestSuites {
 
     @Autowired
     private LoginMapper loginMapper;

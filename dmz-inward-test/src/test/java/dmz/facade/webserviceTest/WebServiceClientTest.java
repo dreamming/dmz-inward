@@ -1,4 +1,4 @@
-package com.dmz.facade.webserviceTest;
+package dmz.facade.webserviceTest;
 
 import com.dmz.service.webservice.client.WebServiceConfiguration;
 import com.dmz.service.webservice.client.englishchinese.invoke.EnglishChineseClientInvoke;
@@ -14,7 +14,7 @@ import java.util.List;
  * Created by dmz on 2016/3/1.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:Spring-facade-consumer.xml")
+@ContextConfiguration(locations = {"classpath:Spring-facade-consumer.xml","classpath:Spring-utils.xml"})
 public class WebServiceClientTest {
     @Test
     public void testEnglishChineseClientInvoke(){

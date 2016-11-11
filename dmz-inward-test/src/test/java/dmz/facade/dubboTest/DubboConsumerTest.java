@@ -1,4 +1,4 @@
-package com.dmz.facade.dubboTest;
+package dmz.facade.dubboTest;
 
 import com.dmz.service.dubbo.invoke.YmUser;
 import org.junit.Test;

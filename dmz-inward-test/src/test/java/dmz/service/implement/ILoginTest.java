@@ -1,13 +1,15 @@
-package com.dmz.service.implement;
+package dmz.service.implement;
 
-import com.alibaba.fastjson.JSON;
+import com.dmz.basic.exception.DBException;
 import com.dmz.basic.model.Login;
-import com.dmz.basic.model.User;
 import com.dmz.service.constant.basic.LoginConstant;
 import com.dmz.service.iservice.ILoginService;
 import com.dmz.service.utils.GenerateUUID;
+import dmz.TestSuites;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -21,6 +23,8 @@ import java.util.Date;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:Spring-basic.xml", "classpath:Spring-utils.xml", "classpath:Spring-service.xml"})
+//@FixMethodOrder(MethodSorters.DEFAULT) //不可预测
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ILoginTest {
 
     @Resource
@@ -30,9 +34,9 @@ public class ILoginTest {
 //    private IUserService userService;
 
     @Test
-    @Transactional   //标明此方法需使用事务
-    @Rollback(false)
-    public void testaddLoginInfo() throws Exception {
+    @Transactional   //标明此方法需使用事务,整个方法执行完才会提交
+    @Rollback(false) //默认为true。
+    public void testAddLoginInfo() throws Exception {
         Login login = new Login();
         login.setHasPasswd(LoginConstant.HAS_HPASSWORD.get(LoginConstant.YES));
         login.setIsDelete(false);
@@ -47,7 +51,7 @@ public class ILoginTest {
         loginService.addLoginInfo(login);
     }
 
-    @Test
+    @Test(expected = DBException.EmptyData.class)
     public void testGetLoginInfoById() {
         loginService.getLoginInfoById(10L);
     }
@@ -70,11 +74,10 @@ public class ILoginTest {
 
     }
 
-    @Test
+    @Test(expected = DBException.MultipleData.class) // 期待的异常类型
     public void testShowUserDetailByLoginName() {
         Login login = new Login();
         login.setLoginName("dmz");
-        User user = loginService.showUserDetailByLoginName(login);
-        System.out.println(JSON.toJSONString(user));
+        loginService.showUserDetailByLoginName(login);
     }
 }
