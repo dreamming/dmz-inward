@@ -35,6 +35,7 @@ public class YingMiClientTest {
         request.setAccountId("5meksel7knd6");
         request.setBrokerUserId("dmzvsdmz");
         AccountInfo account = accountManage.getAccount(request);
+        System.out.println(account.getRiskGrade().getValue());
         System.out.println(JSON.toJSONString(account));
         System.out.println(JSON.toJSONString(account.getAccountName()));
     }
@@ -47,6 +48,18 @@ public class YingMiClientTest {
         System.out.println(JSON.toJSONString(fundInfo));
     }
 
+    @Test
+    public void testGetTradeDate() throws ParseException {
+
+        FundTradeDateRequest request = new FundTradeDateRequest();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+		Date dateTime = sdf.parse("2016-07-06T11:00:00");
+		request.setDatetime(dateTime);
+		request.setOffset(0);
+		request.setFundCode("270001");
+		FundTradeDateResponse response = accountManage.getTradeDate(request);
+		System.out.println(response);
+    }
     @Test
     public void testGetProfits() throws ParseException {
         GetProfitsRequest request = new GetProfitsRequest();

@@ -226,7 +226,11 @@ public abstract class HttpsClient extends SSLConnection {
             Reader reader = new InputStreamReader(entity.getContent(), "UTF-8");
 
             GsonBuilder gsonBuilder = new GsonBuilder();
+//            gsonBuilder.registerTypeAdapterFactory(ImprovedDateTypeAdapter.FACTORY);
             gsonBuilder.registerTypeAdapter(Date.class, new ImprovedDateTypeAdapter());
+//            gsonBuilder.registerTypeAdapter(RiskLevel.class, new ImprovedEnumType());
+//            gsonBuilder.registerTypeAdapter(RiskLevel.class, new ImprovedEnumTypeAdapter());
+            gsonBuilder.registerTypeAdapterFactory(ImprovedEnumTypeAdapter.FACTORY);
             Gson gson = gsonBuilder.create();
             return gson.fromJson(reader, type);
         };

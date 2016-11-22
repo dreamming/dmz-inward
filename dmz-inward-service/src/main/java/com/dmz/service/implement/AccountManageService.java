@@ -79,4 +79,23 @@ public class AccountManageService implements IAccountManageService {
         response.setFundProfits(resp);
         return response;
     }
+
+    @Override
+    public FundTradeDateResponse getTradeDate(FundTradeDateRequest request) {
+
+        Map<String, String> params = new HashMap<>();
+        if (request.getDatetime() != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            params.put("datetime", sdf.format(request.getDatetime()));
+        }
+        if (request.getFundCode() != null) {
+            params.put("fundCode", request.getFundCode());
+        }
+        if (request.getOffset() != null) {
+            params.put("offset", request.getOffset().toString());
+        }
+        FundTradeDateResponse response = yingmiClient.get("/utils/getTradeDate", params, FundTradeDateResponse.class);
+
+        return response;
+    }
 }

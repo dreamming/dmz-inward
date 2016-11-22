@@ -1,12 +1,11 @@
 package com.dmz.service.implement;
 
-import com.alibaba.fastjson.JSON;
 import com.dmz.basic.exception.BusinessException;
+import com.dmz.basic.exception.DBException;
 import com.dmz.basic.idao.ILoginDao;
 import com.dmz.basic.idao.IUserDao;
 import com.dmz.basic.model.Login;
 import com.dmz.basic.model.User;
-import com.dmz.basic.exception.DBException;
 import com.dmz.service.iservice.ILoginService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,14 +62,14 @@ public class LoginService implements ILoginService {
     public User showUserDetailByLoginName(Login loginParam) {
 
         if (loginParam != null && loginParam.getLoginName() != null) {
-                Login login = loginDao.selectLoginByLogin(loginParam);
-                User user = new User();
-                user.setUserNo(login.getUserNo());
-                User userDaoss = userDao.selectUserByUser(user);  // 数据库中刚好一个数据,Mapper中的sql存在问题
-                return userDaoss;
+            Login login = loginDao.selectLoginByLogin(loginParam);
+            User user = new User();
+            user.setUserNo(login.getUserNo());
+            User userDaoss = userDao.selectUserByUser(user);  // 数据库中刚好一个数据,Mapper中的sql存在问题
+            return userDaoss;
         }
 
-        throw new BusinessException.ParamsException("Bad Params",loginParam.toString());
+        throw new BusinessException.ParamsException("Bad Params", loginParam.toString());
     }
 
     public Boolean checkUserLogin(Login loginParams) {

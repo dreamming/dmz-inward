@@ -17,7 +17,8 @@ public class AccountInfo {
 
     private String email;
 
-    private String riskGrade;
+    //    private String riskGrade;
+    private RiskLevel riskGrade;
 
     private String active;
 
@@ -69,11 +70,11 @@ public class AccountInfo {
         this.email = email;
     }
 
-    public String getRiskGrade() {
+    public RiskLevel getRiskGrade() {
         return riskGrade;
     }
 
-    public void setRiskGrade(String riskGrade) {
+    public void setRiskGrade(RiskLevel riskGrade) {
         this.riskGrade = riskGrade;
     }
 

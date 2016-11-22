@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
-import com.google.gson.internal.bind.DateTypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
@@ -21,12 +20,8 @@ import java.util.TimeZone;
 /**
  * Created by dmz on 2016/7/26.
  */
-public class ImprovedDateTypeAdapter extends TypeAdapter<Date> {
-    public static final TypeAdapterFactory FACTORY = new TypeAdapterFactory() {
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> typeToken) {
-            return typeToken.getRawType() == Date.class? (TypeAdapter<T>) new ImprovedDateTypeAdapter() :null;
-        }
-    };
+public final class ImprovedDateTypeAdapter extends TypeAdapter<Date> {
+
     private final DateFormat enUsFormat;
     private final DateFormat localFormat;
     private final DateFormat iso8601Format;
@@ -48,7 +43,7 @@ public class ImprovedDateTypeAdapter extends TypeAdapter<Date> {
     }
 
     public Date read(JsonReader in) throws IOException {
-        if(in.peek() == JsonToken.NULL) {
+        if (in.peek() == JsonToken.NULL) {
             in.nextNull();
             return null;
         } else {
@@ -85,7 +80,7 @@ public class ImprovedDateTypeAdapter extends TypeAdapter<Date> {
     }
 
     public synchronized void write(JsonWriter out, Date value) throws IOException {
-        if(value == null) {
+        if (value == null) {
             out.nullValue();
         } else {
             String dateFormatAsString = this.enUsFormat.format(value);

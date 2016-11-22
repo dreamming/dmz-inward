@@ -17,5 +17,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback.contrib:logback-json-core:0.1.2" level="project" />
     <orderEntry type="library" name="Maven: ch.qos.logback.contrib:logback-jackson:0.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
   </component>
 </module>

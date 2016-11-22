@@ -15,4 +15,6 @@ public interface IAccountManageService {
    FundInfo getFundInfo(FundInfoRequest request);
 
    ProfitsInfoResponse getProfits(GetProfitsRequest request);
+
+   FundTradeDateResponse getTradeDate(FundTradeDateRequest request);
 }
