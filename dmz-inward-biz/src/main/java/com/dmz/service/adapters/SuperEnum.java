@@ -1,4 +1,4 @@
-package com.dmz.service;
+package com.dmz.service.adapters;
 
 /**
  * Created by dmz on 2016/11/22.

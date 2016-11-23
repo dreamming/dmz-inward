@@ -1,5 +1,7 @@
 package com.dmz.basic.exception;
 
+import com.dmz.service.exceptions.BasicException;
+
 /**
  * Created by dmz on 2016/11/10.
  */

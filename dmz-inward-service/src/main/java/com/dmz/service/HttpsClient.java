@@ -1,9 +1,10 @@
 package com.dmz.service;
 
 
-import com.dmz.service.utils.ImprovedDateTypeAdapter;
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
+import com.dmz.service.adapters.ImprovedDateTypeAdapter;
+import com.dmz.service.adapters.ImprovedEnumTypeAdapter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.apache.http.*;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpRequestRetryHandler;
@@ -11,7 +12,10 @@ import org.apache.http.client.HttpResponseException;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.*;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.config.SocketConfig;
@@ -124,6 +128,7 @@ public abstract class HttpsClient extends SSLConnection {
     protected void shutdown() {
         poolMonitor.shutdown();
     }
+
     /**
      * 线程回收策略
      */
@@ -162,6 +167,7 @@ public abstract class HttpsClient extends SSLConnection {
         }
 
     }
+
     protected String post(String host, String path, Map<String, String> params) {
 
         URIBuilder builder = new URIBuilder().setScheme("https")
@@ -201,7 +207,8 @@ public abstract class HttpsClient extends SSLConnection {
             throw new RuntimeException(e);
         }
     }
-    protected  <T> T get(String host, String path, Map<String, String> params ,Type type){
+
+    protected <T> T get(String host, String path, Map<String, String> params, Type type) {
 
         URIBuilder builder = new URIBuilder().setScheme("https")
                 .setHost(host)
@@ -226,7 +233,6 @@ public abstract class HttpsClient extends SSLConnection {
             Reader reader = new InputStreamReader(entity.getContent(), "UTF-8");
 
             GsonBuilder gsonBuilder = new GsonBuilder();
-//            gsonBuilder.registerTypeAdapterFactory(ImprovedDateTypeAdapter.FACTORY);
             gsonBuilder.registerTypeAdapter(Date.class, new ImprovedDateTypeAdapter());
 //            gsonBuilder.registerTypeAdapter(RiskLevel.class, new ImprovedEnumType());
 //            gsonBuilder.registerTypeAdapter(RiskLevel.class, new ImprovedEnumTypeAdapter());

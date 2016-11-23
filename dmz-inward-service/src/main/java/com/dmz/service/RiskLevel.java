@@ -1,5 +1,7 @@
 package com.dmz.service;
 
+import com.dmz.service.adapters.SuperEnum;
+
 /**
  * Created by dmz on 2016/11/22.
  */

@@ -1,6 +1,6 @@
 package com.dmz.service.advisor;
 
-import com.dmz.basic.exception.BasicException;
+import com.dmz.service.exceptions.BasicException;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.slf4j.Logger;
