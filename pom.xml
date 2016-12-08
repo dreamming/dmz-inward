@@ -94,6 +94,11 @@
 
         <javadoc.version>2.10.4</javadoc.version>
 
+
+        <com.h2database.h2>1.4.193</com.h2database.h2>
+
+        <mockito.version>1.10.19</mockito.version>
+
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
     </properties>
@@ -399,6 +404,20 @@
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
                 <version>${apache.httpclient.version}</version>
+            </dependency>
+
+            <!--H2 database-->
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${com.h2database.h2}</version>
+            </dependency>
+
+            <!--Mockito-->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
             </dependency>
 
         </dependencies>
