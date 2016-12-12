@@ -1,6 +1,7 @@
 package dmz;
 
 import com.dmz.test.bean.ClassRoom;
+import com.dmz.test.bean.ConfigurationBean;
 import com.dmz.test.bean.IPerson;
 import com.dmz.test.bean.Person;
 import org.springframework.beans.factory.BeanFactory;
@@ -29,13 +30,14 @@ public class FactoryBeanTest {
 //        URL a = new ApplicationContext().getClass().getClassLoader().getResource("SpringBean.xml");
 
     public static void main(String[] args) {
-        BeanFactory context = new ClassPathXmlApplicationContext("spring-beans.xml");
 //        以下的加载方式不建议使用!!!
 //        ClassPathResource resource = new ClassPathResource("spring-beans.xml");
-//        DefaultListableBeanFactory context = new DefaultListableBeanFactory();
-//        XmlBeanDefinitionReader  reader = new XmlBeanDefinitionReader(context);
+//        DefaultListableBeanFactory context2 = new DefaultListableBeanFactory();
+//        XmlBeanDefinitionReader  reader = new XmlBeanDefinitionReader(context2);
 //        reader.loadBeanDefinitions(resource);
 
+
+        BeanFactory context = new ClassPathXmlApplicationContext("spring-beans.xml");
         IPerson person = context.getBean("person", IPerson.class);
         person.sayHello();
         IPerson per = context.getBean("logPerson", IPerson.class);
@@ -49,6 +51,10 @@ public class FactoryBeanTest {
         System.out.println(context.getBean(BeanFactory.FACTORY_BEAN_PREFIX+"logPerson").getClass());
         System.out.println("-------------------------------------");
 
+
+        System.out.println("-----------------Configuration Beans--------------------");
+        ConfigurationBean cbean = context.getBean("cbean", ConfigurationBean.class);
+        cbean.say();
 //        ClassPathResource resource = new ClassPathResource("spring-beans.xml");
 //        XmlBeanFactory beanFactory = new XmlBeanFactory(resource);
 //        System.out.println(beanFactory.getBean("logPerson").getClass());

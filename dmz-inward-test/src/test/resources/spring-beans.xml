@@ -18,11 +18,15 @@
 
     <bean id="po" class="com.dmz.test.bean.FakePeople"  />
 
-    <!--当autowire-candidate is false ,the DI must point the specific name-->
+    <!--当autowire-candidate is false ,the DI must point the specific name.
+    By type,will not find the class DI-->
     <bean id="people2" class="com.dmz.test.bean.People"  autowire-candidate="false"/>
 
     <bean id="people3" class="com.dmz.test.bean.People">
-        <!--Resource(name="people3") 将不起 -->
+        <!--Resource(name="ppp") 将不起作用,Resource(name="people3) 同样可以实现DI" -->
+
+            <!--或者　@Autowired-->
+            <!--@Qualifier(value = "ppp")-->
         <qualifier value="ppp"/>
     </bean>
 
@@ -33,6 +37,5 @@
     <bean id="logPerson" class="com.dmz.test.bean.LogFactoryBean">
         <property name="interfaceName" value="com.dmz.test.bean.IPerson"/>
         <property name="targetClass" ref="person"/>
-
     </bean>
 </beans>

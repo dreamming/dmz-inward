@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 public class ClassRoom {
 
 
-//    @Resource(name = "people3")
+//    @Resource(name = "ppp")
     @Autowired
     @Qualifier(value = "ppp")
     private People people;
