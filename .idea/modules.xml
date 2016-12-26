@@ -11,7 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/dmz-inward-test/dmz-inward-test.iml" filepath="$PROJECT_DIR$/dmz-inward-test/dmz-inward-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/dmz-inward-utils/dmz-inward-utils.iml" filepath="$PROJECT_DIR$/dmz-inward-utils/dmz-inward-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/dmz-inward-web/dmz-inward-web.iml" filepath="$PROJECT_DIR$/dmz-inward-web/dmz-inward-web.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../react-app/react-app.iml" filepath="$PROJECT_DIR$/../react-app/react-app.iml" />
     </modules>
   </component>
 </project>

@@ -63,8 +63,8 @@ public abstract class HttpsClient extends SSLConnection {
     protected int maxPerRoute = 2;
     protected int retryTime = 3;
     protected int requestTimeout = 5000;
-    protected int connectTimeout = 5000;
-    protected int socketTimeout = 5000;
+    protected int connectTimeout = 5000; // connect timed out threshold
+    protected int socketTimeout = 5000; // read timed out threshold
 
     protected void initHttpsClient() {
 

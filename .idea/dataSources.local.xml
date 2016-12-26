@@ -4,8 +4,6 @@
     <data-source name="MySQL - dmz_inward@192.168.23.137" uuid="f03ed5b4-3c0e-4d7d-8dd6-4355c4d08c13">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>dmz_inward:*</introspection-scope>
-      <resolve-scope>dmz_inward:*</resolve-scope>
     </data-source>
   </component>
 </project>

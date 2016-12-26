@@ -38,4 +38,20 @@
         <property name="interfaceName" value="com.dmz.test.bean.IPerson"/>
         <property name="targetClass" ref="person"/>
     </bean>
+
+    <bean id="customResource" class="dmz.CustomResourceLoader"/>
+
+    <bean id="resourceInject" class="dmz.CustomResourceInjection">
+        <property name="resource">
+            <value>classpath:xml-test.xml</value>
+        </property>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename">
+            <value>messages</value>
+        </property>
+    </bean>
+
+    <bean id="messageLoader" class="dmz.MessageResourceInject"/>
 </beans>
