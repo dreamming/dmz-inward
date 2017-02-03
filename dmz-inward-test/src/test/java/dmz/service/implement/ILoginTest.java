@@ -1,11 +1,11 @@
 package dmz.service.implement;
 
+import com.alibaba.fastjson.JSON;
 import com.dmz.basic.exception.DBException;
 import com.dmz.basic.model.Login;
 import com.dmz.service.constant.basic.LoginConstant;
 import com.dmz.service.iservice.ILoginService;
 import com.dmz.service.utils.GenerateUUID;
-import dmz.TestSuites;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,15 +67,10 @@ public class ILoginTest {
         loginService.addLoginInfo(login);
     }
 
-    @Test(expected = DBException.EmptyData.class)
-    public void testGetLoginInfoById() {
-        loginService.getLoginInfoById(10L);
-    }
-
     @Test
-    public void testShowAllLogin() {
-//        List<Login> logins = loginService.showAllLogin();
-//        System.out.println(logins);
+    public void testGetLoginInfoById() {
+        Login loginInfo = loginService.getLoginInfoById(1L);
+        System.out.println(JSON.toJSONString(loginInfo));
     }
 
     @Test

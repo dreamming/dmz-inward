@@ -18,7 +18,7 @@
     <context:component-scan base-package="com.dmz.basic" />
 
     <!--数据连接池 -->
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+    <bean id="rootDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <property name="driverClassName" value="${mysql.driver}"/>
         <property name="url" value="${mysql.url}" />
         <property name="username" value="${mysql.name}" />
@@ -61,6 +61,42 @@
         <property name="filters" value="${druid.filters}" />
     </bean>
 
+    <!--本地的數據庫-->
+    <bean id="readLocalDataSource" parent="rootDataSource"
+            p:password="${readLocal.password}"
+            p:url="${readLocal.url}"/>
+
+    <!--<bean id="dockerDataSource" parent="dataSource"-->
+          <!--p:username="${mysql.name}"-->
+          <!--p:password="${mysql.passwd}"-->
+          <!--p:url="${docker.url}"/>-->
+
+    <bean id="dataSource" class="com.dmz.basic.MultiReadDataSource">
+
+        <property name="defaultTargetDataSource" ref="rootDataSource"/>
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <entry key="local" value-ref="readLocalDataSource"/>
+                <entry key="docker" value-ref="rootDataSource"/>
+            </map>
+        </property>
+        <property name="dataReadBalance" ref="dataReadBalance"/>
+
+    </bean>
+
+    <bean id="loadBalance" class="com.dmz.service.RandomBalance">
+        <constructor-arg>
+            <map key-type="java.lang.Integer" value-type="java.lang.String">
+                <entry key="10" value="local"/>
+                <entry key="90" value="docker"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="dataReadBalance" class="com.dmz.basic.DataReadBalance">
+        <property name="loadBalance" ref="loadBalance"/>
+    </bean>
+
     <!-- MyBatis -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -77,16 +113,23 @@
         <!--</property>-->
     </bean>
 
+
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.dmz.basic.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
     <!-- JDBC 事务管理器 -->
+    <!--<bean id="transactionManager"-->
+          <!--class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+        <!--<property name="dataSource" ref="dataSource" />-->
+    <!--</bean>-->
+
+    <!--建議使用的方式 JDBC 事务管理器-->
     <bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+          p:dataSource-ref="dataSource"/>
+
 
     <!--Druid 监控-->
     <bean id="druidStatInterceptor" class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor" />

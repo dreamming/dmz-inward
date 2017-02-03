@@ -24,6 +24,7 @@
     <!--advisor|interceptor-->
     <bean class="com.dmz.service.advisor.LoggerAdvisor" id="loggerAdvisor"/>
     <bean class="com.dmz.service.advisor.LoggerExceptionAdvice" id="loggerExceptionAdvice"/>
+    <bean class="com.dmz.service.advisor.WriteReadAdvisor" id="writeReadAdvisor"/>
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>
@@ -35,6 +36,7 @@
             <list>
                 <idref bean="loggerAdvisor"/>
                 <value>transactionInterceptor</value>
+                <idref bean="writeReadAdvisor"/>
                 <!-- idref bean会进行检测是否存在,作用同<value>,value不做检测 || idref local属性4.0以后被移出-->
             </list>
         </property>

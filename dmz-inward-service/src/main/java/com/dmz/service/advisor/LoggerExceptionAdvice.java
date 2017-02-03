@@ -21,7 +21,7 @@ public class LoggerExceptionAdvice implements MethodInterceptor {
             return methodInvocation.proceed();
         } catch (BasicException e) {
             LOG.error("[数据库异常]  Message:{} ,RequestContent:{}, Throwable:{}", e.getMessage(), e.getJsonContext(), e.getEx());
+            return result;
         }
-        return result;
     }
 }
