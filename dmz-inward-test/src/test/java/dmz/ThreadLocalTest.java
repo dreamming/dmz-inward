@@ -1,9 +1,7 @@
 package dmz;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @author dmz
@@ -26,6 +24,9 @@ import java.util.concurrent.Executors;
 //}
 
 public class ThreadLocalTest {
+
+    private static AtomicReference<Thread> sign =new AtomicReference<>();
+
     private static ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>() {
 
         @Override
@@ -36,13 +37,20 @@ public class ThreadLocalTest {
     private static int a = 0;
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-        for (int i = 0; i < 10; i++) {
-            executor.execute(() -> {
-                a = threadLocal.get();
-                threadLocal.set(++a);
-                System.out.println(Thread.currentThread().getName() + "==" + a);
-            });
+
+        System.out.println(sign);
+
+//        ExecutorService executor = Executors.newFixedThreadPool(2);
+//        for (int i = 0; i < 10; i++) {
+//            executor.execute(() -> {
+//                a = threadLocal.get();
+//                a += 1;
+//                threadLocal.set(a);
+//                System.out.println(Thread.currentThread().getName() + "==" + threadLocal.get());
+//            });
+//        }
+//        executor.shutdown();
+//    for (int i=0;i<10;i++) {
 //            new Thread() {
 //                @Override
 //                public void run() {
@@ -57,8 +65,6 @@ public class ThreadLocalTest {
 //                    System.out.println(Thread.currentThread().getName() + "==" + a);
 //                }
 //            }.start();
-
-        }
-        executor.shutdown();
+//        }
     }
 }

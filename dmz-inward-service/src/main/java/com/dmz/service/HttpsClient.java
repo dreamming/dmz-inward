@@ -115,6 +115,23 @@ public abstract class HttpsClient extends SSLConnection {
         RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(connectTimeout).setConnectionRequestTimeout(requestTimeout).build();
         SocketConfig socketConfig = SocketConfig.custom().setTcpNoDelay(true).setSoKeepAlive(false).setSoTimeout(socketTimeout).build();
 
+//        KeepAlive策略
+//        ConnectionKeepAliveStrategy keepAliveStrat = new DefaultConnectionKeepAliveStrategy() {
+//
+//            @Override
+//            public long getKeepAliveDuration(
+//                    HttpResponse response,
+//                    HttpContext context) {
+//                long keepAlive = super.getKeepAliveDuration(response, context);
+//                if (keepAlive == -1) {
+//                    // Keep connections alive 5 seconds if a keep-alive value
+//                    // has not be explicitly set by the server
+//                    keepAlive = 5000;
+//                }
+//                return keepAlive;
+//            }
+//        };
+
         httpClient = HttpClients.custom().setConnectionManager(poolClientManage).setDefaultSocketConfig(socketConfig).setDefaultRequestConfig(requestConfig).setRetryHandler(requestRetry).build();
 
         startMonitor(poolClientManage);
