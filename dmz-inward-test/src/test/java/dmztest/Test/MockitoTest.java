@@ -1,4 +1,4 @@
-package dmz.mockito.test;
+package dmztest.Test;
 
 import junit.framework.TestCase;
 import org.mockito.Mockito;
@@ -12,7 +12,12 @@ class AStatic {
         return 10;
     }
 }
-class A {
+interface B{
+    public void setAnInt();
+
+    public void showA();
+}
+class A implements B{
     private int anInt;
 
     public void setAnInt() {
@@ -27,8 +32,8 @@ class A {
 public class MockitoTest extends TestCase {
 
 
-    public  void test() {
-        A a = Mockito.mock(A.class);
+    public void test() {
+        B a = Mockito.spy(A.class);
         a.setAnInt();
         a.showA();
     }

@@ -21,7 +21,7 @@
 
     <bean id="carTwo" factory-bean="factoryClass"
           factory-method="getCar">
-        <constructor-arg value="tesla"/>
+        <constructor-arg type="java.lang.String" value="tesla"/>
     </bean>
 
     <bean id="classRoomFake" class="com.dmz.test.bean.ClassRoomFake"  autowire="byType"/>

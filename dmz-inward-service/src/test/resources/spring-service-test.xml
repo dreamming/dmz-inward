@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx.xsd
-	http://www.springframework.org/schema/aop
-	http://www.springframework.org/schema/aop/spring-aop.xsd"
+	http://www.springframework.org/schema/context/spring-context.xsd"
        default-lazy-init="false">
 
     <import resource="spring-basic-test.xml"/>
@@ -24,7 +19,7 @@
     <!--advisor|interceptor-->
     <bean class="com.dmz.service.advisor.LoggerAdvisor" id="loggerAdvisor"/>
     <bean class="com.dmz.service.advisor.LoggerExceptionAdvice" id="loggerExceptionAdvice"/>
-    <bean class="com.dmz.service.advisor.WriteReadAdvisor" id="writeReadAdvisor"/>
+    <!--<bean class="com.dmz.service.advisor.WriteReadAdvisor" id="writeReadAdvisor"/>-->
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>
@@ -36,7 +31,7 @@
             <list>
                 <idref bean="loggerAdvisor"/>
                 <value>transactionInterceptor</value>
-                <idref bean="writeReadAdvisor"/>
+                <!--<idref bean="writeReadAdvisor"/>-->
                 <!-- idref bean会进行检测是否存在,作用同<value>,value不做检测 || idref local属性4.0以后被移出-->
             </list>
         </property>
@@ -56,5 +51,8 @@
             </list>
         </property>
     </bean>
-    <bean id="yingmiClient" class="com.dmz.service.YingmiClient"/>
+
+    <bean id="yingmiClient" class="com.dmz.TestFactoryBean" factory-method="getMockBean">
+        <constructor-arg value="com.dmz.service.YingmiClient"/>
+    </bean>
 </beans>
