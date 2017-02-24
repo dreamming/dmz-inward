@@ -4,12 +4,8 @@ import com.dmz.basic.mapper.LoginMapper;
 import com.dmz.basic.model.Login;
 import com.dmz.service.constant.basic.LoginConstant;
 import com.dmz.service.utils.GenerateUUID;
-import dmz.TestSuites;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 
@@ -24,7 +20,7 @@ public class LoginMapperTest extends TestSuites {
     private LoginMapper loginMapper;
 
     @Test
-    public void testLoginMapper(){
+    public void testLoginMapper() {
         Login login = new Login();
         login.setHasPasswd(LoginConstant.HAS_HPASSWORD.get(LoginConstant.YES));
         login.setIsDelete(false);

@@ -30,7 +30,6 @@
         <module name="dmz-inward-test" />
         <module name="dmz-inward-utils" />
         <module name="dmz-inward-web" />
-        <module name="react-app" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,7 +42,6 @@
       <module name="dmz-inward-test" target="1.8" />
       <module name="dmz-inward-utils" target="1.8" />
       <module name="dmz-inward-web" target="1.8" />
-      <module name="react-app" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,12 +3,8 @@ package dmz.basic.mapperTest;
 import com.dmz.basic.mapper.UserMapper;
 import com.dmz.basic.model.User;
 import com.dmz.service.constant.basic.UserConstant;
-import dmz.TestSuites;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 
@@ -23,7 +19,7 @@ public class UserMapperTest extends TestSuites {
     public UserMapper userMapper;
 
     @Test
-    public void testUserMapper(){
+    public void testUserMapper() {
         User user = new User();
         user.setAvatar("../../assets/Chrysanthemum.jpg");
         user.setCreateTime(new Date());
